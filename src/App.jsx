@@ -1,5 +1,6 @@
 import "./App.css";
 import About from "./pages/About/About";
+import Contact from "./pages/Contact/Contact";
 import Projects from "./pages/Projects/Projects";
 import Home from "/src/pages/Home/Home";
 import {
@@ -22,6 +23,10 @@ function App() {
       {
          path: "/projects",
          element: <Projects />,
+      },
+      {
+         path: "/contact",
+         element: <Contact />,
       },
    ]);
 
