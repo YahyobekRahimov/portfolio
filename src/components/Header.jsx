@@ -5,20 +5,16 @@ import styled from "@emotion/styled";
 
 const menu = [
    {
-      name: "Home",
-      path: "/",
-   },
-   {
       name: "About",
-      path: "/about",
+      path: "#about",
    },
    {
       name: "Projects",
-      path: "/projects",
+      path: "#projects",
    },
    {
       name: "Contact",
-      path: "/contact",
+      path: "#contact",
    },
 ];
 
@@ -59,12 +55,12 @@ export default function Header() {
                <ul className="flex items-center gap-14 text-2xl">
                   {menu.map((link, index) => (
                      <ListItem className="" key={index}>
-                        <NavLink
+                        <a
                            className="px-[0.5rem] py-[0.5rem]"
-                           to={link.path}
+                           href={link.path}
                         >
                            {link.name}
-                        </NavLink>
+                        </a>
                      </ListItem>
                   ))}
                </ul>

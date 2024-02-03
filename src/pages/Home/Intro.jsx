@@ -1,52 +1,42 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Container from "../../components/Container";
 
 export default function Intro({ text }) {
-   const textRef = useRef();
-
-   useEffect(() => {
-      const observer = new IntersectionObserver(
-         (entries) => {
-            entries.forEach((entry) => {
-               if (entry.isIntersecting) {
-                  // Trigger your animation logic here
-                  console.log("Text block is visible!");
-                  // You can add your animation class or logic here
-                  textRef.current.classList.add("animate"); // Add your CSS class
-               }
-            });
-         },
-         {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.5, // Adjust the threshold as needed
-         }
-      );
-
-      if (textRef.current) {
-         observer.observe(textRef.current);
-      }
-
-      return () => {
-         if (textRef.current) {
-            observer.unobserve(textRef.current);
-         }
-      };
-   }, [textRef]);
-   const result = "stunning";
+   const [wordIndex, setWordIndex] = useState(0);
    const adjectives = ["stunning", "innovative", "user-friendly"];
 
+   useEffect(() => {
+      const intervalId = setInterval(() => {
+         setWordIndex((prev) => {
+            if (prev === adjectives.length - 1) {
+               return 0;
+            } else {
+               return prev + 1;
+            }
+         });
+      }, 2000);
+
+      return () => clearInterval(intervalId);
+   }, []);
    return (
       <section className="min-h-screen">
          <Container>
-            <h2
-               className="text-[3rem] text-center leading-normal"
-               ref={textRef}
-            >
+            <div className="text-[3rem] text-center leading-normal">
                Hi! My name is Yahyobek.
-               <br /> I love building <span>{result}</span> web
-               experiences
-            </h2>
+               <br /> I love building
+               <div className="w-[24rem] h-[2rem] inline-block">
+                  {adjectives.map((adj, index) => (
+                     <span
+                        className={`text-zinc-200 font-bold
+                           ${index !== wordIndex ? "hidden" : ""}
+                        `}
+                     >
+                        {adj}
+                     </span>
+                  ))}
+               </div>
+               web experiences
+            </div>
          </Container>
       </section>
    );

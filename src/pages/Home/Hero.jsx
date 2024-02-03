@@ -16,20 +16,18 @@ export default function Hero() {
       }
    }, []);
    return (
-      <section>
-         <Container className="min-h-screen flex items-center">
-            <div className="flex h-full items-center pb-[12rem]">
-               <h1 className="text-[3.7rem]">
-                  <SyntaxHighlighter
-                     language="javascript"
-                     style={coldarkDark}
-                     className="bg-slate-900"
-                  >
-                     {result}
-                  </SyntaxHighlighter>
-               </h1>
-            </div>
-         </Container>
-      </section>
+      <Container className="min-h-screen flex items-center">
+         <div className="flex h-full items-center pb-[12rem]">
+            <h1 className="text-[3.7rem]">
+               <SyntaxHighlighter
+                  language="javascript"
+                  style={coldarkDark}
+                  className="bg-slate-900"
+               >
+                  {result}
+               </SyntaxHighlighter>
+            </h1>
+         </div>
+      </Container>
    );
 }
