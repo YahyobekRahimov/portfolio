@@ -2,27 +2,27 @@ const ProjectCard = ({
    image,
    title,
    description,
-   demoLink,
+   liveLink,
    sourceLink,
 }) => {
    return (
-      <div className="max-w-md mx-auto bg-white rounded-xl overflow-hidden shadow-lg m-4">
+      <div className="bg-slate-900 rounded-xl flex flex-col overflow-hidden shadow-lg">
          <img
             className="w-full h-48 object-cover"
             src={image}
             alt={title}
          />
-         <div className="p-6">
+         <div className="p-6 h-full flex flex-col justify-between gap-0">
             <h2 className="font-bold text-xl mb-2">{title}</h2>
-            <p className="text-gray-700">{description}</p>
-            <div className="mt-4">
+            <p className="text-gray-300 mb-2">{description}</p>
+            <div>
                <a
-                  href={demoLink}
+                  href={liveLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:underline mr-4"
                >
-                  Demo
+                  View Project
                </a>
                <a
                   href={sourceLink}
