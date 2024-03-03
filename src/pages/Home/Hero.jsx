@@ -18,7 +18,7 @@ export default function Hero() {
    return (
       <Container className="min-h-screen flex items-center">
          <div className="flex h-full items-center pb-[12rem]">
-            <h1 className="text-[1rem] lg:text-[3.7rem]">
+            <h1 className="text-[1rem] md:text-[2rem] lg:text-[2.6rem] xl:text-[3.7rem]">
                <SyntaxHighlighter
                   language="javascript"
                   style={coldarkDark}

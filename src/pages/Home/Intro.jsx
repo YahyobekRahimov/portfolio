@@ -24,7 +24,7 @@ export default function Intro({ text }) {
             <div className="text-[2rem] lg:text-[3rem] text-center leading-normal mb-4">
                Hi! My name is Yahyobek.
                <br /> I love building
-               <div className="w-[24rem] h-[2rem] inline-block">
+               <div className="w-[20rem] lg:w-[24rem] h-[2rem] inline-block">
                   {adjectives.map((adj, index) => (
                      <span
                         key={index}
