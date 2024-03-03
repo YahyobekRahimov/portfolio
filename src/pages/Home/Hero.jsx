@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Container from "../../components/Container";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { coldarkDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import { getRandomNumber } from "../../JS/RandomNumber";
+import { getRandomNumber } from "../../utils/RandomNumber";
 
 export default function Hero() {
    const [result, setResult] = useState("");
@@ -18,7 +18,7 @@ export default function Hero() {
    return (
       <Container className="min-h-screen flex items-center">
          <div className="flex h-full items-center pb-[12rem]">
-            <h1 className="text-[3.7rem]">
+            <h1 className="text-[1rem] lg:text-[3.7rem]">
                <SyntaxHighlighter
                   language="javascript"
                   style={coldarkDark}

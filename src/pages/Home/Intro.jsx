@@ -21,12 +21,13 @@ export default function Intro({ text }) {
    return (
       <section className="min-h-screen">
          <Container>
-            <div className="text-[3rem] text-center leading-normal mb-4">
+            <div className="text-[2rem] lg:text-[3rem] text-center leading-normal mb-4">
                Hi! My name is Yahyobek.
                <br /> I love building
                <div className="w-[24rem] h-[2rem] inline-block">
                   {adjectives.map((adj, index) => (
                      <span
+                        key={index}
                         className={`text-zinc-200 font-bold
                            ${index !== wordIndex ? "hidden" : ""}
                         `}
@@ -37,7 +38,7 @@ export default function Intro({ text }) {
                </div>
                web experiences
             </div>
-            <div className="flex">
+            <div className="flex flex-col lg:flex-row">
                <div className="bg-slate-600 p-5">
                   <h3 className="text-3xl mb-3">
                      Educational background

@@ -1,4 +1,3 @@
-import { NavLink } from "react-router-dom";
 import Container from "./Container";
 import Logo from "./Logo";
 import styled from "@emotion/styled";
@@ -52,7 +51,7 @@ export default function Header() {
          <Container className="py-4 flex items-center">
             <Logo />
             <nav className="flex items-center justify-center w-full">
-               <ul className="flex items-center gap-14 text-2xl">
+               <ul className="hidden lg:flex items-center gap-14 text-2xl">
                   {menu.map((link, index) => (
                      <ListItem className="" key={index}>
                         <a

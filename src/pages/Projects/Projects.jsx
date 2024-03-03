@@ -3,8 +3,18 @@ import ProjectCard from "./ProjectCard";
 import ProjectImage_1 from "/src/assets/images/project_1.png";
 import ProjectImage_2 from "/src/assets/images/project_2.png";
 import ProjectImage_3 from "/src/assets/images/project_3.png";
+import ProjectImage_5 from "/src/assets/images/project_5.png";
 
 const PROJECTS = [
+   {
+      image: ProjectImage_5,
+      title: "AudioPholio E-commerce Store",
+      description:
+         "This was one of the best projects I've ever worked on. I have learned a lot from this because I had to take on the challenge of combining Next.js with Redux, which was new for me.",
+      liveLink: "https://ryahyobek-audiophile-ecommerce.netlify.app/",
+      sourceLink:
+         "https://github.com/YahyobekRahimov/audiophile-ecommerce",
+   },
    {
       image: ProjectImage_1,
       title: "Greenshop",
@@ -35,10 +45,13 @@ const PROJECTS = [
 export default function Projects() {
    return (
       <Container>
-         <h2 className="text-5xl text-center my-10">Projects</h2>
-         <div className="grid grid-cols-3 gap-10">
-            {PROJECTS.map((project) => (
+         <h2 className="text-3xl lg:text-5xl text-center my-10">
+            Projects
+         </h2>
+         <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            {PROJECTS.map((project, index) => (
                <ProjectCard
+                  key={index}
                   image={project.image}
                   title={project.title}
                   description={project.description}

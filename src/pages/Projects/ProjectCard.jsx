@@ -4,9 +4,13 @@ const ProjectCard = ({
    description,
    liveLink,
    sourceLink,
+   key,
 }) => {
    return (
-      <div className="bg-slate-900 rounded-xl flex flex-col overflow-hidden shadow-lg">
+      <div
+         key={key}
+         className="bg-slate-900 rounded-xl flex flex-col overflow-hidden shadow-lg"
+      >
          <img
             className="w-full h-48 object-cover"
             src={image}
