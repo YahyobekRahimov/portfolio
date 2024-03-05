@@ -11,7 +11,7 @@ const PROJECTS = [
       title: "AudioPholio E-commerce Store",
       description:
          "This was one of the best projects I've ever worked on. I have learned a lot from this because I had to take on the challenge of combining Next.js with Redux, which was new for me.",
-      liveLink: "https://ryahyobek-audiophile-ecommerce.netlify.app/",
+      liveLink: "https://ryahyobek-audiophile-ecommerce.vercel.app/",
       sourceLink:
          "https://github.com/YahyobekRahimov/audiophile-ecommerce",
    },
