@@ -46,7 +46,7 @@ export default function Projects() {
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:grid-cols-2 gap-10">
         {PROJECTS.map((project, index) => (
           <ProjectCard
-            key={index}
+            uniqueKey={index}
             image={project.image}
             title={project.title}
             description={project.description}
@@ -56,7 +56,7 @@ export default function Projects() {
         ))}
       </div>
       <p className="text-center mt-5 text-2xl">
-        I have other smaller projects too, but I didn't find them
+        I have other smaller projects too, but I didn{"'"}t find them
         worth sharing
       </p>
     </Container>

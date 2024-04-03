@@ -4,18 +4,18 @@ const ProjectCard = ({
   description,
   liveLink,
   sourceLink,
-  key,
+  uniqueKey,
 }: {
   image: string;
   title: string;
   description: string;
   liveLink: string;
   sourceLink: string;
-  key: number | string;
+  uniqueKey: number | string;
 }) => {
   return (
     <div
-      key={key}
+      key={uniqueKey}
       className="bg-slate-900 rounded-xl flex flex-col overflow-hidden shadow-lg"
     >
       <img
