@@ -1,5 +1,9 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import Container from "../Container";
 import ProjectCard from "./ProjectCard";
+import { motion, useInView } from "framer-motion";
 
 const PROJECTS = [
   {
@@ -39,11 +43,31 @@ const PROJECTS = [
 
 export default function Projects() {
   return (
-    <Container>
-      <h2 className="text-3xl lg:text-5xl text-center my-10">
+    <Container className="pt-36">
+      <motion.h2
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 0.5 }}
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 200 },
+        }}
+        className="text-3xl lg:text-5xl text-center my-10"
+      >
         Projects
-      </h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:grid-cols-2 gap-10">
+      </motion.h2>
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        variants={{
+          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 200 },
+        }}
+        className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 md:grid-cols-2 gap-10"
+      >
         {PROJECTS.map((project, index) => (
           <ProjectCard
             key={index}
@@ -55,7 +79,7 @@ export default function Projects() {
             sourceLink={project.sourceLink}
           />
         ))}
-      </div>
+      </motion.div>
       <p className="text-center mt-5 text-2xl">
         I have other smaller projects too, but I didn{"'"}t find them
         worth sharing

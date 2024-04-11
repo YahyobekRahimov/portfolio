@@ -14,13 +14,18 @@ export default function Hero() {
     let finalResult = `console.log("Welcome to my World!")`;
     for (let i = 0; i < finalResult.length; i++) {
       const time = getRandomNumber(0, 100);
+      if (i == finalResult.length - 1) {
+        setTimeout(() => {
+          setResult(finalResult.slice(0, i + 1));
+        }, i * 100 + time);
+      }
       setTimeout(() => {
-        setResult(finalResult.slice(0, i + 1));
+        setResult(finalResult.slice(0, i + 1) + "|");
       }, i * 100 - time);
     }
   }, []);
   return (
-    <Container className="min-h-screen flex items-center">
+    <Container className="min-h-[90vh] flex items-center">
       <div className="flex h-full items-center pb-[12rem]">
         <h1 className="text-[1rem] md:text-[2rem] lg:text-[2.6rem] xl:text-[3.7rem]">
           <SyntaxHighlighter

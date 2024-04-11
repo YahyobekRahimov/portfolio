@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Container from "../Container";
 
 export default function Intro() {
@@ -18,7 +18,7 @@ export default function Intro() {
   }, 1000);
 
   return (
-    <section className="min-h-screen">
+    <section className="pt-36">
       <Container>
         <div className="text-[2rem] lg:text-[3rem] text-center leading-normal mb-4">
           Hi! My name is Yahyobek.
